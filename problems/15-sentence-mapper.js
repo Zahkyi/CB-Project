@@ -26,8 +26,21 @@ console.log(result2); // 'ths s prtty cl rght'
 *******************************************************************************/
 
 let sentenceMapper = function (sentence, cb) {
-  // Your code here
-};
+  let newSentence = sentence.split(' ')
+
+  for (let i = 0; i < newSentence.length; i++) {
+    let currWord = newSentence[i];
+    newSentence[i] = cb(currWord)
+  }
+  return newSentence.join(' ')
+}
+
+
+let result1 = sentenceMapper("what is the answer?", function(word) {
+  return word.toUpperCase() + "!";
+});
+console.log(result1); // 'WHAT! IS! THE! ANSWER?!'
+
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 try {

@@ -27,7 +27,14 @@ console.log(result4); // 0
 *******************************************************************************/
 
 function count(array, cb) {
-  // Your code here
+  let count = 0;
+
+  for (let currVal of array) {
+    if (cb(currVal)) {
+      count++;
+    }
+  }
+  return count;
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/

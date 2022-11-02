@@ -24,8 +24,16 @@ console.log(result3);   // true
 *******************************************************************************/
 
 function mySome(array, cb) {
-    // Your code here
+
+    for (let i = 0; i < array.length; i++) {
+        let currVal = array[i];
+        if (cb(currVal, i)) {
+            return true;
+        }
+    }
+    return false;
 }
+
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 try {
